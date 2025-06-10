@@ -1,4 +1,4 @@
-﻿using System.Drawing;
+using System.Drawing;
 using System.Text.RegularExpressions;
 using Tesseract;
 
@@ -25,7 +25,7 @@ public class TD2Module : GameModule
     string ExtractSpeed(string cleanedText) 
     {
         var match = Regex.Match(cleanedText, @"(\d+)km/h");
-        return match.Success ? match.Groups[1].Value : "0";
+        return match.Success ? match.Groups[1].Value : "Nothing found";
     }
     
     public override void Initialize()
