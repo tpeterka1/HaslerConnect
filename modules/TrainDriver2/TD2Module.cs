@@ -8,7 +8,7 @@ namespace HaslerConnect.TrainDriver2;
 
 public class TD2Module : GameModule
 {
-    private TesseractEngine engine;
+    private TesseractEngine? engine;
     private int[] imageDimensions = [497, 0, 429, 31]; // start X, start Y, width, height
     private int lastSpeed = 0;
 

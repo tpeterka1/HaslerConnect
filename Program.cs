@@ -34,30 +34,8 @@ namespace HaslerConnect
         
         static void Main(string[] args)
         {
-            //string[] processList = Array.Empty<string>();
             string chosenProcess = string.Empty;
             GameModule? activeModule = null;
-            
-            //foreach (var item in gameProcessModules)
-            //{
-            //    processList = processList.Concat(item.Key).ToArray();
-            //}
-
-            //Console.WriteLine("Waiting for game...");
-
-            //while (string.IsNullOrEmpty(chosenProcess))
-            //{
-            //    foreach (string process in processList)
-            //    {
-            //        if (Process.GetProcessesByName(process).FirstOrDefault() != null)
-            //        {
-            //            chosenProcess = process;
-            //            break;
-            //        }
-            //    }
-            //}
-            //
-            //Console.WriteLine("Chosen process: " + chosenProcess);
             
             Console.WriteLine("Waiting for game...");
 
@@ -86,6 +64,7 @@ namespace HaslerConnect
                     }
                     else
                     {
+                        if (activeModule == null) continue;
                         activeModule.Tick();
 
                         if (activeModule.ReadyForRead())
