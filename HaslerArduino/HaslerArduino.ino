@@ -25,7 +25,9 @@ int k = 0;
 void setup() {
   Serial.begin(115200);
 
-  analogWriteFreq(20000);  // 20kHz, so no more annoying beep from motor
+  //analogWriteFreq(20000);  // 20kHz, so no more annoying beep from motor
+  analogWriteFreq(16000);
+  //analogWriteFreq(3000);
 
   pinMode(ENCA,INPUT);
   pinMode(ENCB,INPUT);
@@ -109,6 +111,10 @@ void loop() {
     pwr = 255;
   }
 
+  if (targetMotorSpeed == 0) {
+    pwr = 0;
+  }
+
   //float output = ((float)pwr/255)*100;
   setMotor(dir,pwr,PWM,IN1,IN2);
 
@@ -119,7 +125,7 @@ void loop() {
   //  Serial.print(" ");
   //  Serial.print(v1Filt);
   //  Serial.print(" ");
-  //  Serial.print(targetSpeed);
+  //  Serial.print(pwr);
   //  Serial.println();
   //}
   //k = k+1;
@@ -128,21 +134,27 @@ void loop() {
 }
 
 void setMotor(int dir, int pwmVal, int pwm, int in1, int in2){
-  analogWrite(pwm,pwmVal); // Motor speed
-  if(dir == 1){ 
-    // Turn one way
+  if (pwmVal == 0 || pwmVal < 80){
+    analogWrite(pwm,0);
     digitalWrite(in1,LOW);
-    digitalWrite(in2,HIGH);
-  }
-  else if(dir == -1){
-    // Turn the other way
-    digitalWrite(in1,HIGH);
     digitalWrite(in2,LOW);
-  }
-  else{
-    // Or dont turn
-    digitalWrite(in1,LOW);
-    digitalWrite(in2,LOW);    
+  } else {
+    analogWrite(pwm,pwmVal); // Motor speed
+    if(dir == 1){ 
+      // Turn one way
+      digitalWrite(in1,LOW);
+      digitalWrite(in2,HIGH);
+    }
+    else if(dir == -1){
+      // Turn the other way
+      digitalWrite(in1,HIGH);
+      digitalWrite(in2,LOW);
+    }
+    else{
+      // Or dont turn
+      digitalWrite(in1,LOW);
+      digitalWrite(in2,LOW);    
+    }
   }
 }
 
