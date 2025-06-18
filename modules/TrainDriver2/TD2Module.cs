@@ -258,7 +258,7 @@ public class TD2Module : GameModule
         string result = page.GetText();
         page.Image.Dispose();
         page.Dispose();
-        Console.WriteLine(result);
+        if (Program.Debug) Console.WriteLine("OCR result: " + result);
         if (result.Contains("Current speed"))
         {
             string cleaned = CleanText(result);
@@ -269,11 +269,9 @@ public class TD2Module : GameModule
                 lastSpeed = speed;
                 return speed;
             }
-            else
-            {
-                //Console.WriteLine("RETURNING LAST SPEED!");
-                return lastSpeed;
-            }
+            
+            //Console.WriteLine("RETURNING LAST SPEED!");
+            return lastSpeed;
         }
         
         return 0;
