@@ -5,7 +5,7 @@
     <TargetFramework>net8.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	<ApplicationManifest>D:\Projekty\HaslerConnect\app.manifest</ApplicationManifest>
+	<ApplicationManifest>D:\Tvořivá všehochuť, reverse engineering\Hasler\HaslerConnect\app.manifest</ApplicationManifest>
 	<PublishSingleFile>true</PublishSingleFile>
 	<SelfContained>false</SelfContained>
 	<RuntimeIdentifier>win-x64</RuntimeIdentifier>

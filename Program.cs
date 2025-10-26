@@ -2,6 +2,7 @@
 using System.IO.Ports;
 using HaslerConnect.modules.Railworks;
 using HaslerConnect.TrainDriver2;
+using HaslerConnect.TrainSimWorld;
 
 namespace HaslerConnect
 {
@@ -17,7 +18,7 @@ namespace HaslerConnect
         private static readonly Dictionary<string[], GameModule> gameProcessModules = new()
         {
             { ["RailWorks", "RailWorks64", "RailWorksDX12_64"], new RailworksModule() },
-            //{ ["TrainSimWorld"], new TSWModule() },
+            { ["TrainSimWorld"], new TSWModule() },
             { ["TrainDriver2"], new TD2Module() },
             //{ ["SimRail"], new SimRailModule() }
         };
