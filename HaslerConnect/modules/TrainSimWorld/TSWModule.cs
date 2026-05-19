@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace HaslerConnect.TrainSimWorld;
+namespace HaslerConnect.modules.TrainSimWorld;
 
 public class TSWModule : GameModule
 {

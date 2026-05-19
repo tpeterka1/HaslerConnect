@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using Tesseract;
 
-namespace HaslerConnect.TrainDriver2;
+namespace HaslerConnect.modules.TrainDriver2;
 
 public class TD2Module : GameModule
 {

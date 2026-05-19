@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using System.IO.Ports;
 using HaslerConnect.modules.Railworks;
-using HaslerConnect.TrainDriver2;
-using HaslerConnect.TrainSimWorld;
+using HaslerConnect.modules.TrainDriver2;
+using HaslerConnect.modules.TrainSimWorld;
 
 namespace HaslerConnect
 {
